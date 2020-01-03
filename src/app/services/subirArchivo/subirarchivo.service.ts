@@ -1,0 +1,47 @@
+import { Injectable } from '@angular/core';
+import { URL_SERVICIOS } from '../../config/config';
+
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class SubirarchivoService {
+
+  constructor() { }
+// no hay manera de hacerlo con angular se utiliza vanilla java
+
+subirArchivo(archivo: File, tipo: string, id: string) {
+
+  return new Promise ( (resolve, reject) => {
+
+    const formData = new FormData();
+    const xhr = new XMLHttpRequest();
+
+    formData.append('imagen', archivo, archivo.name);
+
+    // tslint:disable-next-line: only-arrow-functions
+    xhr.onreadystatechange = function() {
+    if ( xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        console.log('imagen subida');
+        resolve(JSON.parse(xhr.response)); // para menejarlo como objeto
+      } else {
+        console.log('Fallo la subida');
+        reject(xhr.response);
+      }
+    }
+  };
+
+    const url = URL_SERVICIOS + '/upload/' + tipo + '/' + id;
+
+    xhr.open('put', url, true);
+    xhr.send(formData);
+
+
+  });
+
+
+}
+
+}
