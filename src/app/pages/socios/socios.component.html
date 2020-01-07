@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <input #input (keyup)="buscarSocio(input.value)" type="text" class="form-control" placeholder="Buscar socios...">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="text-right">
+                    <button [routerLink]="['/socio','nuevo']" type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
+                    <i class="fa fa-plus"></i>
+                    Crear socio
+                </button>
+                </div>
+                <h3 class="card-title">Socios registrados ( <small>{{ socioSer.totalSocios }}</small> )</h3>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Foto</th>
+                            <th>Socio</th>
+                            <th>Negocio</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let socio of socios">
+                            <td>
+                                <img (click)="actualizarImagen( hospedaje)" [src]="socio.img | imagen:'socio'" class="img-50  pointer" alt="">
+                            </td>
+                            <td>
+                                <input [(ngModel)]="socio.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre socio">
+                            </td>
+                            <td>
+                                <input [(ngModel)]="socio.hospedaje.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre socio">
+                            </td>
+                            <td>
+                                <button [routerLink]="['/socio', socio._id]" class="btn btn-primary">
+                                    <i class="fa fa-edit"></i>
+                                  </button>
+
+                                <button (click)="borraSocio(socio)" class="btn btn-danger">
+                                      <i class="fa fa-trash-o"></i>
+                                 </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>l

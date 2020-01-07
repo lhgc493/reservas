@@ -1,1 +1,52 @@
-<p>hospedajes works!</p>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <input #input (keyup)="buscarHospedaje(input.value)" type="text" class="form-control" placeholder="Buscar hospedaje...">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="text-right">
+                    <button (click)="crearHospedaje()" type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
+                    <i class="fa fa-plus"></i>
+                    Crear Hospedaje
+                </button>
+                </div>
+                <h3 class="card-title">Hospedajes registrados ( <small>{{ hospedajeSer.totalHospedajes }}</small> )</h3>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Foto</th>
+                            <th>Hospedaje</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let hospedaje of hospedajes">
+                            <td>
+                                <img (click)="actualizarImagen( hospedaje)" [src]="hospedaje.img | imagen:'hospedaje'" class="img-50  pointer" alt="">
+                            </td>
+                            <td>
+                                <input [(ngModel)]="hospedaje.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre hospedaje">
+                            </td>
+                            <td>
+                                <button (click)="guardarHospedaje(hospedaje)" class="btn btn-primary">
+                                    <i class="fa fa-save"></i>
+                                  </button>
+
+                                <button (click)="borraHospedaje(hospedaje)" class="btn btn-danger">
+                                      <i class="fa fa-trash-o"></i>
+                                 </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div><i class="fas fa-lightbulb-exclamation    "></i>

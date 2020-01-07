@@ -14,6 +14,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { HospedajesComponent } from './hospedajes/hospedajes.component';
+import { SociosComponent } from './socios/socios.component';
+import { SocioComponent } from './socios/socio.component';
 
 
 
@@ -33,6 +35,8 @@ const pagesRoutes: Routes = [
        // mantenimientos
        { path: 'usuarios', component: UsuarioComponent, data: {titulo: 'Mantenimiento de usuarios'}},
        { path: 'hospedajes', component: HospedajesComponent, data: {titulo: 'Mantenimiento de hospedajes'}},
+       { path: 'socios', component: SociosComponent, data: {titulo: 'Mantenimiento de socios'}},
+       { path: 'socio/:id', component: SocioComponent, data: {titulo: 'Actualizacion de socios'}},
        { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
       ]
     },

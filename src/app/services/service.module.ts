@@ -5,6 +5,7 @@ import { ModaluploadService } from '../components/modalupload/modalupload.servic
 
 
 
+
 // servicios centralizados en este modulo
 import {
   SettingsService,
@@ -12,7 +13,8 @@ import {
   SharedService,
   UsuarioService,
   SubirarchivoService,
-  HospedajeService
+  HospedajeService,
+  SocioService
 
 } from './index.service';
 
@@ -30,8 +32,9 @@ import {
    UsuarioService,
    SubirarchivoService,
    HospedajeService,
-   ModaluploadService
-  
+   ModaluploadService,
+   SocioService
+
   ]
 })
 export class ServiceModule { }

@@ -1,3 +1,4 @@
+export { SocioService } from './socio/socio.service';
 export { HospedajeService } from './hospedaje/hospedaje.service';
 export { UsuarioService } from './usuario/usuario.service';
 

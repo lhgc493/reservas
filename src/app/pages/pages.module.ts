@@ -21,6 +21,9 @@ import { CommonModule } from '@angular/common'; import { FormsModule } from '@an
 import { UsuarioComponent } from './usuario/usuario.component';
 import { HospedajesComponent } from './hospedajes/hospedajes.component';
 import { ModaluploadComponent } from '../components/modalupload/modalupload.component';
+import { SociosComponent } from './socios/socios.component';
+import { SocioComponent } from './socios/socio.component';
+
 
 
 
@@ -37,9 +40,12 @@ import { ModaluploadComponent } from '../components/modalupload/modalupload.comp
         ProfileComponent,
         UsuarioComponent,
         HospedajesComponent,
-        ModaluploadComponent
-    
-    
+        ModaluploadComponent,
+        SociosComponent,
+        SocioComponent,
+
+
+
     ],
     exports: [
         DashboardComponent,
@@ -51,10 +57,10 @@ import { ModaluploadComponent } from '../components/modalupload/modalupload.comp
         CommonModule,
         HttpClientModule,
         SharedModule,
-        PAGES_ROUTES,       
+        PAGES_ROUTES,
         FormsModule,
-        
-       
+
+
         PipesModule
 
     ]
