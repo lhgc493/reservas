@@ -16,6 +16,8 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { HospedajesComponent } from './hospedajes/hospedajes.component';
 import { SociosComponent } from './socios/socios.component';
 import { SocioComponent } from './socios/socio.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
+import { AdminGuard } from '../services/index.service';
 
 
 
@@ -32,8 +34,14 @@ const pagesRoutes: Routes = [
        { path: 'rxjs', component: RxjsComponent },
        { path: 'account-setting', component: AccountSettingsComponent },
        { path: 'perfil', component: ProfileComponent, data: {titulo: 'Perfil de usuario'} },
+       { path: 'busqueda/:termino', component: BusquedaComponent, data: {titulo: 'Buscador'} },
+
        // mantenimientos
-       { path: 'usuarios', component: UsuarioComponent, data: {titulo: 'Mantenimiento de usuarios'}},
+       { path: 'usuarios',
+         component: UsuarioComponent,
+         canActivate: [AdminGuard],
+         data: {titulo: 'Mantenimiento de usuarios'}},
+
        { path: 'hospedajes', component: HospedajesComponent, data: {titulo: 'Mantenimiento de hospedajes'}},
        { path: 'socios', component: SociosComponent, data: {titulo: 'Mantenimiento de socios'}},
        { path: 'socio/:id', component: SocioComponent, data: {titulo: 'Actualizacion de socios'}},

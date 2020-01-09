@@ -23,6 +23,7 @@ import { HospedajesComponent } from './hospedajes/hospedajes.component';
 import { ModaluploadComponent } from '../components/modalupload/modalupload.component';
 import { SociosComponent } from './socios/socios.component';
 import { SocioComponent } from './socios/socio.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 
 
@@ -43,6 +44,7 @@ import { SocioComponent } from './socios/socio.component';
         ModaluploadComponent,
         SociosComponent,
         SocioComponent,
+        BusquedaComponent,
 
 
 

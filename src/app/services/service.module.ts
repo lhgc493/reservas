@@ -14,7 +14,9 @@ import {
   UsuarioService,
   SubirarchivoService,
   HospedajeService,
-  SocioService
+  SocioService,
+  AdminGuard,
+  LoginGuardGuard
 
 } from './index.service';
 
@@ -33,8 +35,9 @@ import {
    SubirarchivoService,
    HospedajeService,
    ModaluploadService,
-   SocioService
-
+   SocioService,
+   AdminGuard,
+   LoginGuardGuard
   ]
 })
 export class ServiceModule { }

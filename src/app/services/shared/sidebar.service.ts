@@ -1,10 +1,28 @@
 import { Injectable } from '@angular/core';
+import { UsuarioService } from '../index.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class SidebarService {
-  menu: any = [
+  menu: any[] = [];
+  constructor(public usuService: UsuarioService) {
+   
+  }
+  cargarMenu () {
+    this.menu = this.usuService.menu;
+  }
+}
+
+
+
+
+
+
+
+
+ /* menu: any = [
     {
       titulo: 'Principal',
       icono: 'mdi mdi-gauge',
@@ -26,7 +44,6 @@ export class SidebarService {
       ]
     },
 
-  ];
+  ];*/
 
-  constructor() { }
-}
+
